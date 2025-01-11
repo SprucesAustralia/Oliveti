@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oliveti - Commercial Cleaning Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Approximate brand colors from the attached screenshot */
+    :root {
+      --bg-color: #e8c2b3;    /* Pinkish background */
+      --text-color: #5f1d1d;  /* Dark brown/maroon for text */
+      --accent-color: #5f1d1d;/* Same as text or could be darker if desired */
+      --heading-font: "Georgia", serif;
+      --body-font: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--body-font);
+      line-height: 1.5;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-family: var(--heading-font);
+      font-size: 36px;
+      color: var(--text-color);
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--text-color);
+    }
+
+    .tagline p {
+      margin-bottom: 8px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+
+    h2 {
+      font-family: var(--heading-font);
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    /* A short note about the standard vs. deep clean visits */
+    .visit-info {
+      text-align: center;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    /* Checklist Form */
+    form {
+      background-color: #fff3f0;  /* slightly lighter pink for contrast */
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .area-section {
+      margin-bottom: 30px;
+    }
+
+    .area-section h3 {
+      font-size: 20px;
+      font-family: var(--heading-font);
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+
+    /* Table styling for tasks */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+    }
+    th, td {
+      border: 1px solid #d3c0bb;
+      vertical-align: top;
+      padding: 10px;
+    }
+    th {
+      background-color: var(--accent-color);
+      color: #fff;
+      font-weight: 400;
+      text-align: center;
+      font-family: var(--heading-font);
+    }
+
+    .task-col {
+      width: 200px; 
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    .checklist-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .checklist-cell label {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+    .checklist-cell input[type="checkbox"] {
+      transform: scale(1.1);
+    }
+    .checklist-cell input[type="file"] {
+      font-size: 12px;
+    }
+    .checklist-cell textarea {
+      width: 100%;
+      min-height: 40px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 4px;
+      resize: vertical;
+      color: #333;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      display: block;
+      margin: 30px auto 0;
+      background-color: var(--text-color);
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #472828;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 14px;
+      }
+      .task-col {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>OLIVETI</h1>
+</header>
+
+<div class="tagline">
+  <p>
+    ✓ AI-powered custom cleaning checklist (matched to your brand)  
+    ✓ Mobile-friendly system for your cleaning team  
+    ✓ Photo verification capabilities  
+    ✓ Automated weekly performance reports  
+    ✓ Quality tracking analytics  
+  </p>
+  <p>
+    Already helping 100+ facilities save 5+ hours weekly on cleaning management.  
+    Also: ✓ Cost-saving cleaning frequencies  
+    ✓ Combining my 10 years of cleaning expertise with AI innovation to transform your cleaning standards.  
+    Drop a 👋 or your business name … or DM me  
+    Want to transform your facility’s cleaning standards in 2 minutes? What are you waiting for?
+  </p>
+</div>
+
+<div class="container">
+  <h2>Commercial Cleaning Checklist</h2>
+  <div class="visit-info">
+    <strong>Visits:</strong> Standard (Basic) vs. Deep Clean.  
+    <em>Standard tasks apply to every visit. Deep Clean adds extra tasks.</em>
+  </div>
+
+  <form action="#" method="POST" enctype="multipart/form-data">
+    <!-- Offices -->
+    <div class="area-section">
+      <h3>Offices</h3>
+      <table>
+        <thead>
+          <tr>
+            <th class="task-col">Task</th>
+            <th>Standard</th>
+            <th>Deep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Empty bins & replace liners</td>
+            <td>
+              <!-- Standard visit tasks -->
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_bins_std"> Done</label>
+                <input type="file" name="offices_bins_std_photo" accept="image/*">
+                <textarea name="offices_bins_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <!-- Deep day tasks -->
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_bins_deep"> Done</label>
+                <input type="file" name="offices_bins_deep_photo" accept="image/*">
+                <textarea name="offices_bins_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Vacuum & spot clean floors</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_vac_std"> Done</label>
+                <input type="file" name="offices_vac_std_photo" accept="image/*">
+                <textarea name="offices_vac_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_vac_deep"> Done</label>
+                <input type="file" name="offices_vac_deep_photo" accept="image/*">
+                <textarea name="offices_vac_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Dust desks & chairs</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_desk_std"> Done</label>
+                <input type="file" name="offices_desk_std_photo" accept="image/*">
+                <textarea name="offices_desk_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_desk_deep"> Done</label>
+                <input type="file" name="offices_desk_deep_photo" accept="image/*">
+                <textarea name="offices_desk_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Sanitize high-touch points (door handles, switches)</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_touch_std"> Done</label>
+                <input type="file" name="offices_touch_std_photo" accept="image/*">
+                <textarea name="offices_touch_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_touch_deep"> Done</label>
+                <input type="file" name="offices_touch_deep_photo" accept="image/*">
+                <textarea name="offices_touch_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Clean behind desks & chairs (Deep only)</td>
+            <td></td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="offices_behind_deep"> Done</label>
+                <input type="file" name="offices_behind_deep_photo" accept="image/*">
+                <textarea name="offices_behind_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Kitchen -->
+    <div class="area-section">
+      <h3>Kitchen</h3>
+      <table>
+        <thead>
+          <tr>
+            <th class="task-col">Task</th>
+            <th>Standard</th>
+            <th>Deep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wipe counters & tables</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_wipe_std"> Done</label>
+                <input type="file" name="kitchen_wipe_std_photo" accept="image/*">
+                <textarea name="kitchen_wipe_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_wipe_deep"> Done</label>
+                <input type="file" name="kitchen_wipe_deep_photo" accept="image/*">
+                <textarea name="kitchen_wipe_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Clean sink & faucets</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_sink_std"> Done</label>
+                <input type="file" name="kitchen_sink_std_photo" accept="image/*">
+                <textarea name="kitchen_sink_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_sink_deep"> Done</label>
+                <input type="file" name="kitchen_sink_deep_photo" accept="image/*">
+                <textarea name="kitchen_sink_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Empty bins & replace liners</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_bins_std"> Done</label>
+                <input type="file" name="kitchen_bins_std_photo" accept="image/*">
+                <textarea name="kitchen_bins_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_bins_deep"> Done</label>
+                <input type="file" name="kitchen_bins_deep_photo" accept="image/*">
+                <textarea name="kitchen_bins_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Wipe fridge & microwave exterior</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_exterior_std"> Done</label>
+                <input type="file" name="kitchen_exterior_std_photo" accept="image/*">
+                <textarea name="kitchen_exterior_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_exterior_deep"> Done</label>
+                <input type="file" name="kitchen_exterior_deep_photo" accept="image/*">
+                <textarea name="kitchen_exterior_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Clean inside fridge & microwave (Deep only)</td>
+            <td></td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="kitchen_infridge_deep"> Done</label>
+                <input type="file" name="kitchen_infridge_deep_photo" accept="image/*">
+                <textarea name="kitchen_infridge_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bathrooms -->
+    <div class="area-section">
+      <h3>Bathrooms</h3>
+      <table>
+        <thead>
+          <tr>
+            <th class="task-col">Task</th>
+            <th>Standard</th>
+            <th>Deep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clean & disinfect toilets</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_toilets_std"> Done</label>
+                <input type="file" name="bathroom_toilets_std_photo" accept="image/*">
+                <textarea name="bathroom_toilets_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_toilets_deep"> Done</label>
+                <input type="file" name="bathroom_toilets_deep_photo" accept="image/*">
+                <textarea name="bathroom_toilets_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Restock toilet paper, soap, towels</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_restock_std"> Done</label>
+                <input type="file" name="bathroom_restock_std_photo" accept="image/*">
+                <textarea name="bathroom_restock_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_restock_deep"> Done</label>
+                <input type="file" name="bathroom_restock_deep_photo" accept="image/*">
+                <textarea name="bathroom_restock_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Clean sinks, mirrors, faucets</td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_sinks_std"> Done</label>
+                <input type="file" name="bathroom_sinks_std_photo" accept="image/*">
+                <textarea name="bathroom_sinks_std_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_sinks_deep"> Done</label>
+                <input type="file" name="bathroom_sinks_deep_photo" accept="image/*">
+                <textarea name="bathroom_sinks_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Disinfect stalls & partitions (Deep only)</td>
+            <td></td>
+            <td>
+              <div class="checklist-cell">
+                <label><input type="checkbox" name="bathroom_stalls_deep"> Done</label>
+                <input type="file" name="bathroom_stalls_deep_photo" accept="image/*">
+                <textarea name="bathroom_stalls_deep_comment" placeholder="Comments"></textarea>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Checklist</button>
+  </form>
+</div>
+
+</body>
+</html>
